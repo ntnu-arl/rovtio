@@ -1,0 +1,12 @@
+image_width: 640
+image_height: 512
+camera_name: tau2
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [440.381678762, 0.0, 328.082910449, 0.0, 440.34105427, 257.335140534, 0.0, 0.0, 1.0]
+distortion_model: equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data: [-0.125172452973, -0.0158508045529, 0.00552041769855, 0.00188160221577]

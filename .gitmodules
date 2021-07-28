@@ -1,0 +1,3 @@
+[submodule "lightweight_filtering"]
+	path = lightweight_filtering
+	url = https://bitbucket.org/bloesch/lightweight_filtering/

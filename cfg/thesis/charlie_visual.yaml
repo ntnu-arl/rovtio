@@ -1,0 +1,25 @@
+image_width: 720
+image_height: 540
+camera_name: cam0
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [598.050958528, 0.0, 371.973721958, 0.0, 597.972652373, 281.737882158, 0.0, 0.0, 1.0]
+distortion_model: equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data: [-0.024365162968706798, -0.00736980689641503, 0.017060458132381842, -0.01698413284118175]
+# The ones I originally got from Nikhil
+#image_width: 1440
+#image_height: 1080
+#camera_name: blackfly
+#camera_matrix:
+#  rows: 3
+#  cols: 3
+#  data: [1196.1019170559905, 0.0, 743.947443915435, 0.0, 1195.9453047468228, 563.475764315019, 0.0, 0.0, 1.0]
+#distortion_model: equidistant
+#distortion_coefficients:
+#  rows: 1
+#  cols: 4
+#  data: [-0.024365162968706798, -0.00736980689641503, 0.017060458132381842, -0.01698413284118175]

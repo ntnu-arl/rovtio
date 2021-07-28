@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+  <remap from="/rovtio/odometry" to="/rovtio/odometry"/>
+<!--  <remap from="/imu0" to="/vn100/imu"/>-->
+<!--  <remap from="/imu0" to="/matrice/imu"/>-->
+  <node pkg="rovtio" type="rovtio_node" name="rovtio" output="screen">
+  <param name="filter_config" value="$(find rovtio)/cfg/thesis/rovtio_thesis.info"/>
+  <param name="imu_topic" value="/vn100/imu"/>
+  <param name="camera_topic0" value="/cam_blackfly/cam_blackfly"/>
+  <param name="camera_topic1" value="/tau_nodelet/thermal_image"/>
+  <param name="camera0_config" value="$(find rovtio)/cfg/thesis/charlie_visual.yaml"/>
+  <param name="camera1_config" value="$(find rovtio)/cfg/thesis/charlie_tau2.yaml"/>
+  <param name="cam0_offset" value="0.0"/> # timeshift[s](t_imu = t_cam + shift)
+  <param name="cam1_offset" value="-0.02414188675155223"/> #tau2: timeshift[s](t_imu = t_cam + shift)
+  <param name="maxDelayBeforeDropping" value="-0.2"/> # (s) # Negative to avoid frame dropping
+  <param name="storeRuntimes" value="false"/>        # Enable the logic to log the execution time
+  <param name="maxTimeCamInactive" value="0.12"/> # (s)
+  </node>
+</launch>
