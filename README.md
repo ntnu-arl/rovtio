@@ -5,7 +5,7 @@ To extend visual inertial odometry to dark environments one can instead of a sta
 Due to the differences between the modalities does it not rely on stereo correspondences and it can both initialize and track if only one of the camera streams is available.
 
 
-This work is based on ROVIO: https://github.com/ethz-asl/rovio
+This work is based on [ROVIO](https://github.com/ethz-asl/rovio), which it inheriths some properties from. Same as ROVIO, ROVTIO is a direct, robocentric filter-based method. The filter ROVTIO use is the same iterated extended kalman filter that ROVIO use. These traits also allow ROVTIO to initialize the map at a high uncertainty and let it converge during operation, removing the need for an explicit initialization procedure. 
 
 ROVTIO was developed as a part of the work for the authors master thesis. The thesis will be published when graded.
 
