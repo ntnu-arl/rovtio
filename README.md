@@ -14,7 +14,7 @@ ROVTIO requires no additional dependencies from the ones ROVIO requires. See the
 ## Setup and running
  
 1. Install the dependencies for [ROVIO](#install-without-opengl-scene)
-2. Configure the rovtio.info file and the .launch file. Examples are in `cfg/thesis`.  
+2. Configure the rovtio.info file and the .launch file. Examples are in `cfg/rovtio`.  
 
 ### Running ROVTIO on the datsets considered in the master thesis
 
@@ -23,7 +23,7 @@ This is using the [`catkin tools`](https://catkin-tools.readthedocs.io/en/latest
 1. Download the desired dataset from [here](https://to.be.done).
 2. Unzip the zipfile.
 2. Build ROVTIO `catkin build rovtio --cmake-args -DCMAKE_BUILD_TYPE=Release -DMAKE_SCENE=OFF -DROVIO_NCAM=2 -DROVIO_NMAXFEATURE=25`
-4. Run ROVTIO `roslaunch rovtio rovtio_thesis.launch`
+4. Run ROVTIO `roslaunch rovtio rovtio.launch`
 5. Play the bags. Enter the dataset folder and `rosbag play *.bag`
 6. Optional: Open `rviz` and monitor `/rovtio/odometry`. You can compare it to the near ground truth result from LOAM at the topic`/aft_mapped_to_init_CORRECTED`.
 
