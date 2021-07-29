@@ -1,6 +1,9 @@
 # ROVTIO: RObust Visual Thermal Inertial Odometry #
 
-This repo contains ROVTIO, an algorithm for odometry estimation using both a visual camera, an infrared camera and an IMU. It can run on unsynchronized sensors and improves robustness compared to just using one modality.
+This repo contains ROVTIO, an algorithm for odometry estimation using both a visual camera, an infrared camera and an IMU. 
+To extend visual inertial odometry to dark environments one can instead of a standard visual camera use a thermal camera. However, thermal cameras struggle in thermal flat environments, i.e. environments where everything have the same temperature and the emissivity is similar. To get the best of both modalities ROVTIO use both a thermal camera and a visual camera. 
+Due to the differences between the modalities does it not rely on stereo correspondences and it can both initialize and track if only one of the camera streams is available.
+
 
 This work is based on ROVIO: https://github.com/ethz-asl/rovio
 
@@ -9,12 +12,11 @@ ROVTIO was developed as a part of the work for the authors master thesis. The th
 ## Install
 
 ROVTIO requires no additional dependencies from the ones ROVIO requires. See the ROVIO install directions [below](#install-without-opengl-scene).
- 
 
 ## Setup and running
  
 1. Install the dependencies for [ROVIO](#install-without-opengl-scene)
-2. Configure the rovtio.info file and the .launch file. Examples are in `cfg/rovtio`.  
+2. Configure the rovtio.info file and the .launch file. Examples are in `cfg/rovtio`.
 
 ### Running ROVTIO on the datsets considered in the master thesis
 
