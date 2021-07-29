@@ -8,15 +8,15 @@ Common
 	store_runtimes true;        Should runtimes of selected functions be stored to csv files (often in ~/.ros)
 }
 Camera0
-{ ; Extrinsics from running rovtio for a while(commented out)
+{
   CalibrationFile  ;
-  qCM_x    0.5815717;  0.478259044239                              X-entry of IMU to Camera quaterion (Hamilton)
-  qCM_y   -0.5690489;  -0.657982301598                               Y-entry of IMU to Camera quaterion (Hamilton)
-  qCM_z    0.4071662;  0.499496850913                              Z-entry of IMU to Camera quaterion (Hamilton)
-  qCM_w    0.4149379; 0.298044415004                                W-entry of IMU to Camera quaterion (Hamilton)
-  MrMC_x -0.019282391666587094; -1.04290544857;                               X-entry of IMU to Camera vector (expressed in IMU CF) [m]
-  MrMC_y -0.007020499072517088; 0.0926678116491;                              Y-entry of IMU to Camera vector (expressed in IMU CF) [m]
-  MrMC_z -0.13646235628270134; 0.0691220379392;                             Z-entry of IMU to Camera vector (expressed in IMU CF) [m]
+  qCM_x    0.5815717;                               X-entry of IMU to Camera quaterion (Hamilton)
+  qCM_y   -0.5690489;                               Y-entry of IMU to Camera quaterion (Hamilton)
+  qCM_z    0.4071662;                               Z-entry of IMU to Camera quaterion (Hamilton)
+  qCM_w    0.4149379;                               W-entry of IMU to Camera quaterion (Hamilton)
+  MrMC_x -0.019282391666587094;                     X-entry of IMU to Camera vector (expressed in IMU CF) [m]
+  MrMC_y -0.007020499072517088;                     Y-entry of IMU to Camera vector (expressed in IMU CF) [m]
+  MrMC_z -0.13646235628270134;                      Z-entry of IMU to Camera vector (expressed in IMU CF) [m]
 }
 Camera1
 {
@@ -139,6 +139,7 @@ ImgUpdate
     maxDistanceForApproximatlyLocalizingFeatures -10;           The max euclidian distance which is used to define "close" when assosiating features between the modalities. (Negative if not adding anything ever.)
     modalitySelectionAdditionScalar 1.0;                        How much should the modality be multiplied with to get the number of allowed features in the modality selection.
     relativeThresholdforUsingLiveFeatureScores 0.5;             The relative scaling of the threshold for when to use live features lifetime to decide prefered modality
+    minFeaturesPerModality 0;                                   The minimum number of features kept in each modality, even when that modality is considered suboptimal. Can be set to make handoffs easier. Preliminary results indicate that this worsened accuracy, but it might improve robustnes.
     MotionDetection
     {
     	isEnabled 1;											Is the motion detection enabled

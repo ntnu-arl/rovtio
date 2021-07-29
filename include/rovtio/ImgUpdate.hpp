@@ -249,6 +249,7 @@ namespace rovtio {
     int numRemovedFeaturesThisFrame;
     double relativeThresholdforUsingLiveFeatureScores_;
     double modalitySelectionAdditionScalar_;
+    int minFeaturesPerModality_;
 
 
     // Temporary
@@ -339,6 +340,7 @@ namespace rovtio {
       relativeThresholdforUsingLiveFeatureScores_ = 0.5;
       modalitySelectionAdditionScalar_ = 1;
       maxDistanceForApproxamentlyLocalizingFeatures_ = -1.0;
+      minFeaturesPerModality_ = 0;
 
       for (int i = 0;i<mtState::nCam_;++i){
         framesSinceLastDetectionAtempt_[i] = 0;
@@ -411,6 +413,7 @@ namespace rovtio {
       doubleRegister_.registerScalar("maxDistanceForApproximatlyLocalizingFeatures", maxDistanceForApproxamentlyLocalizingFeatures_);
       doubleRegister_.registerScalar("relativeThresholdforUsingLiveFeatureScores", relativeThresholdforUsingLiveFeatureScores_);
       doubleRegister_.registerScalar("modalitySelectionAdditionScalar", modalitySelectionAdditionScalar_);
+      doubleRegister_.registerScalar("minFeaturesPerModality", minFeaturesPerModality_);
       for (int i = 0; i < mtState::nCam_; ++i) {
         doubleRegister_.registerScalar("minSTScoreForModalitySelection" + std::to_string(i), minSTScoreForModalitySelection_[i]);
         doubleRegister_.registerScalar("additionalScoreFromOtherModality" + std::to_string(i), additionalScoreFromOtherModality_[i]);
@@ -906,7 +909,6 @@ namespace rovtio {
       if (mtState::nCam_ <= 1) {
         return mtState::nMax_;
       }
-      const int minFeaturesPerModality = 0; // Can be set to make handoffs easier. Preliminary results indicate that this worsened accuracy, but it might improve robustnes. Minimum 6 features was found to be a sweet spot when using a total of 25 features.
 
       int inactiveCameras = 0;
       for (int i = 0; i < mtState::nCam_; ++i) {
@@ -931,8 +933,8 @@ namespace rovtio {
         totalAverageLifetimes += averageFeatureLifetime[i];
       }
 
-      const int maxFeaturesToAdd = mtState::nMax_ - featuresPerCam[meas.aux().activeModality_] - minFeaturesPerModality * std::max(mtState::nCam_-1 - inactiveCameras, 0);
-      const int minFeaturesToAdd = std::max(minFeaturesPerModality - featuresPerCam[meas.aux().activeModality_], 0);
+      const int maxFeaturesToAdd = mtState::nMax_ - featuresPerCam[meas.aux().activeModality_] - minFeaturesPerModality_ * std::max(mtState::nCam_-1 - inactiveCameras, 0);
+      const int minFeaturesToAdd = std::max(minFeaturesPerModality_ - featuresPerCam[meas.aux().activeModality_], 0);
       const int possibleToAdd = mtState::nMax_ - filterState.fsm_.getValidCount();
 
       std::cout << "camID:" << camID << ", numFound[0]: " << numFound[0] << ", numfound[1]:" << numFound[1] << '\n';
