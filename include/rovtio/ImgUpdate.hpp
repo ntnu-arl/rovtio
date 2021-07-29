@@ -413,7 +413,7 @@ namespace rovtio {
       doubleRegister_.registerScalar("maxDistanceForApproximatlyLocalizingFeatures", maxDistanceForApproxamentlyLocalizingFeatures_);
       doubleRegister_.registerScalar("relativeThresholdforUsingLiveFeatureScores", relativeThresholdforUsingLiveFeatureScores_);
       doubleRegister_.registerScalar("modalitySelectionAdditionScalar", modalitySelectionAdditionScalar_);
-      doubleRegister_.registerScalar("minFeaturesPerModality", minFeaturesPerModality_);
+      intRegister_.registerScalar("minFeaturesPerModality", minFeaturesPerModality_);
       for (int i = 0; i < mtState::nCam_; ++i) {
         doubleRegister_.registerScalar("minSTScoreForModalitySelection" + std::to_string(i), minSTScoreForModalitySelection_[i]);
         doubleRegister_.registerScalar("additionalScoreFromOtherModality" + std::to_string(i), additionalScoreFromOtherModality_[i]);
