@@ -276,7 +276,7 @@ class FeatureSetManager{
             for (const FoundFeature &feature: goodFeatures.at(camID)) {
               const double dist = cv::norm(candidates[i].c_ - feature.c_);
               if (dist < maxDistanceForApproxamentlyLocalizingFeatures) {
-                const float potentialScore = sqrt(feature.s_) * sqrt(dist) * additionalScoreFromOtherModality;
+                const float potentialScore = additionalScoreFromOtherModality;
                 if (potentialScore < 0) throw std::logic_error("This should not be negative: " + std::to_string(potentialScore));
                 if (potentialScore > bestBonus) {
                   bestBonus = potentialScore;
