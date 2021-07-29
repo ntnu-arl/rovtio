@@ -84,7 +84,7 @@ generate_messages(DEPENDENCIES
   std_msgs
   geometry_msgs
 )
-MESSAGE(Before catkin package)
+
 catkin_package(
 	INCLUDE_DIRS include ${catkin_INCLUDE_DIRS}
     LIBRARIES ${PROJECT_NAME}
@@ -103,7 +103,7 @@ catkin_package(
 	rosbag
     yaml_cpp_catkin
 )
-MESSAGE(After catkin package.)
+
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${YamlCpp_INCLUDE_DIRS})
 
