@@ -22,7 +22,7 @@ ROVTIO requires no additional dependencies from the ones ROVIO requires. See the
 
 This is using the [`catkin tools`](https://catkin-tools.readthedocs.io/en/latest/index.html) to build the ros package. You can also build it with `catkin_make`.
 
-1. Download the desired dataset from [here](https://to.be.done).
+1. Download the desired dataset from [here](https://drive.google.com/drive/folders/1FExxmw5FVcu1FAYibpvGxqSUa2cIfCmh).
 2. Unzip the zipfile.
 2. Build ROVTIO `catkin build rovtio --cmake-args -DCMAKE_BUILD_TYPE=Release -DMAKE_SCENE=OFF -DROVIO_NCAM=2 -DROVIO_NMAXFEATURE=25`
 4. Run ROVTIO `roslaunch rovtio rovtio.launch`
