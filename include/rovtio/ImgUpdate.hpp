@@ -951,7 +951,8 @@ namespace rovtio {
       }
 
       // Increment featurecounthistoryscore
-      const std::array<double, mtState::nCam_> inclusionFactors = {timeSinceLastCall/featureCountHistoryLength, timeSinceLastCall/featureCountHistoryLength};
+      std::array<double, mtState::nCam_> inclusionFactors;
+      inclusionFactors.fill(timeSinceLastCall/featureCountHistoryLength);
       if (featureCountHistoryScore[camID] < 0) {
         featureCountHistoryScore[camID] = 0.5;
       } else {
