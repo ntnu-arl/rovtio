@@ -13,6 +13,7 @@ ROVTIO was developed as a part of the work for the authors master thesis. The th
 
 ROVTIO requires no additional dependencies from the ones ROVIO requires. See the ROVIO install directions [below](#install-without-opengl-scene).
 
+Note that it is recomended to install `kindr` [using catkin](https://github.com/ethz-asl/kindr#building-with-catkin).
 ## Setup and running
  
 1. Install the dependencies for [ROVIO](#install-without-opengl-scene)
