@@ -649,7 +649,28 @@ class RovioNode{
       cv::cvtColor(cv_ptr->image, cv_img, CV_RGB2GRAY);
       cv_img.convertTo(cv_img, CV_32FC1);
     }
+    else if (cv_ptr->encoding == "bgra8"){
+      cv::cvtColor(cv_ptr->image, cv_img, CV_BGRA2GRAY);
+      cv_img.convertTo(cv_img, CV_32FC1);
+    }
+    else if (cv_ptr->encoding == "rgba8"){
+      cv::cvtColor(cv_ptr->image, cv_img, CV_RGBA2GRAY);
+      cv_img.convertTo(cv_img, CV_32FC1);
+    }
+    else if (cv_ptr->encoding == "mono8"){
+      cv_img.convertTo(cv_img, CV_32FC1);
+    }
+    else if (cv_ptr->encoding == "mono16"){
+      cv_img.convertTo(cv_img, CV_32FC1);
+    }
+    else if (cv_ptr->encoding == "8UC1"){
+      cv_img.convertTo(cv_img, CV_32FC1);
+    }
+    else if (cv_ptr->encoding == "16UC1"){
+      cv_img.convertTo(cv_img, CV_32FC1);
+    }
     else {
+        std::cout << "Unsupported image type: " << cv_ptr->encoding;
         cv_ptr->image.convertTo(cv_img, CV_32FC1);
     }
     double camOffset = 0;
