@@ -9,6 +9,8 @@ This work is based on [ROVIO](https://github.com/ethz-asl/rovio), which it inher
 
 ROVTIO was developed as a part of the work for the authors [master thesis](https://hdl.handle.net/11250/2828783). The master thesis contains analysis of the benefit of using both thermal and visual compared to using only one of them. 
 
+The data used for analysis in the master thesis is provided [here](https://drive.google.com/drive/folders/1FExxmw5FVcu1FAYibpvGxqSUa2cIfCmh). It is collected by Mihir Kulkarni at Autonomous Robots lab the University of Nevada.
+
 ## Install
 
 ROVTIO requires no additional dependencies from the ones ROVIO requires. See the ROVIO install directions [below](#install-without-opengl-scene).
