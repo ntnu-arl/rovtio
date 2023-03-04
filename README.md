@@ -36,7 +36,7 @@ This is using the [`catkin tools`](https://catkin-tools.readthedocs.io/en/latest
 
 ROVTIO can use several cameras out of the box, but needs to be configured accordingly. They can be either thermal or visual cameras, but the related parameters in the `.info` file should be chosen accordingly.
 
-1. Edit the launch file: You need to add a `camera_topicX` where the each camera needs to be designated an id `X` which is numbers starting at 0 and increasing by 1. If the timing offset between the camera and teh IMU is known, you can specify it with the `camX_offset` where `X` is the camera ID.
+1. Edit the launch file: You need to add a `camera_topicX` where the each camera needs to be designated an id `X` which is numbers starting at 0 and increasing by 1. If the timing offset between the camera and the IMU is known, you can specify it with the `camX_offset` where `X` is the camera ID.
 2. Edit the .info file: There is several parameters which needs to be specified per camera. This is because you typically want different parameters for thermal cameras and visual cameras. Look in the example file and duplicate all the parameters that ends with a number(eg. `minSTScoreForModalitySelectionX`) and change the number `X` To the camera ID.
 3. Rebuild with the new number of cameras in the `-DROVIO_NCAM` build option.
 
